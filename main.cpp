@@ -5,9 +5,9 @@
 #include <unordered_map>
 #include <time.h>
 #include <curl/curl.h>
+#include "./HandleObj.h"
 
 #define QUERY "https://query1.finance.yahoo.com/v7/finance/download/" // searching query
-#define OFFSET 2649600
 
 class CurlObj {
 public:
@@ -53,6 +53,7 @@ void init_Map(std::unordered_map<std::string, std::string>& TypeMap) {
     TypeMap["GBP/USD"] = "GBPUSD=X";
     TypeMap["USD/THB"] = "USDTHB=X";
     TypeMap["USD/INR"] = "INR=X";
+    TypeMap["Tencent"] = "0700.HK";
 }
 
 long parse(std::string date) {
@@ -151,6 +152,7 @@ int main() {
     std::cout << Test.getData() << std::endl;
 
     // Step #3 Handle the Data
-    // TODO
+    // TODO 
+    // Trading Group Project -> USD / JPY
 
 }
