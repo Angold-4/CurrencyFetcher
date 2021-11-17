@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <time.h>
 #include <curl/curl.h>
-#include "./HandleObj.h"
+#include "./HandleObj.cpp"
 
 #define QUERY "https://query1.finance.yahoo.com/v7/finance/download/" // searching query
 
@@ -149,10 +149,12 @@ int main() {
 
     // Step #2 Fetch the CSV Data From Requested URL file and return the string
     CurlObj Test(URL); 
-    std::cout << Test.getData() << std::endl;
+    // std::cout << Test.getData() << std::endl;
 
     // Step #3 Handle the Data
     // TODO 
     // Trading Group Project -> USD / JPY
-
+    HandleObj* TObj = new HandleObj(Test.getData());
+    TObj->SMA();
+    TObj->print_monbias();
 }
