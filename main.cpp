@@ -53,7 +53,10 @@ void init_Map(std::unordered_map<std::string, std::string>& TypeMap) {
     TypeMap["GBP/USD"] = "GBPUSD=X";
     TypeMap["USD/THB"] = "USDTHB=X";
     TypeMap["USD/INR"] = "INR=X";
+
     TypeMap["Tencent"] = "0700.HK";
+    TypeMap["ABC"] = "1288.HK";
+    TypeMap["Nvida"] = "NVDA";
 }
 
 long parse(std::string date) {
@@ -156,5 +159,5 @@ int main() {
     // Trading Group Project -> USD / JPY
     HandleObj* TObj = new HandleObj(Test.getData());
     TObj->SMA();
-    TObj->print_monbias();
+    // TObj->print_monbias();
 }
